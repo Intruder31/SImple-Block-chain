@@ -91,12 +91,10 @@ class Blockchain(object):
             
             #Validate chain by checking last hash
             if (previous_block_hash != block['previous_hash']):
-                print("Exiting in 1st if")
                 return False
 
             #Validate proofs
             if not self.validate_block(previous_block['proof'],block['proof'], previous_block_hash):
-                print("Exiting in 2nd if")
                 return False
 
             previous_block = block
